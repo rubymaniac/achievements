@@ -51,7 +51,7 @@ module Achievements
       def achievements(object_array)
 	make_engine if !@engine
         object_array.each do |object|
-          @engine.achievement(object.context, object.achievement_slug, object.threshold)
+          @engine.achievement(object.context.to_sym, object.name.to_sym, object.threshold)
         end
       end
 
@@ -67,7 +67,7 @@ module Achievements
 
       def achieves(context_name_array)
         context_name_array.each do |cna|
-          @engine.achieve cna[0], @id, cna[1]
+          @engine.achieve cna[0], id, cna[1]
         end
       end
 
