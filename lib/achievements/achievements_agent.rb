@@ -21,12 +21,12 @@ module Achievements
     # Agent instance level achievement trigger.  Automatically sends
     # agent id along with context and name to the AchievementEngine
     def achieve(context,name)
-      self.class.engine.achieve context, @id, name
+      self.class.engine.achieve context, id, name
     end
 
     # Determine a user's 'score'
     def score(context=nil,name=nil)
-      self.class.engine.score(@id, context, name)
+      self.class.engine.score(id, context, name)
     end
   end
 end
